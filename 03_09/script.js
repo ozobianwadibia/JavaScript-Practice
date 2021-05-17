@@ -12,10 +12,25 @@ const backpack = {
   volume: 30,
   color: "grey",
   pocketNum: 15,
+
+  changeName: function (newName) {
+    this.name = newName;
+  },
+  adjustVolume: function (newVolume) {
+    this.volume = newVolume;
+  },
+  alterColor: function (newColor) {
+    this.color = newColor;
+  },
+  redoPocketNum: function (newPocketNum) {
+    this.pocketNum = newPocketNum;
+  },
+
   strapLength: {
     left: 26,
     right: 26,
   },
+  lidOpen: false,
   toggleLid: function (lidStatus) {
     this.lidOpen = lidStatus;
   },
@@ -24,3 +39,11 @@ const backpack = {
     this.strapLength.right = lengthRight;
   },
 };
+
+console.log("The old backpack color is: ", backpack.color);
+backpack.alterColor("blue");
+console.log("The new backpack color is: ", backpack.color);
+
+console.log("The old backpack name is: ", backpack.name);
+backpack.changeName("Rising Thunder");
+console.log("The new backpack name is: ", backpack.name);
