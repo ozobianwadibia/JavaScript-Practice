@@ -1,119 +1,225 @@
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BackpackPacker</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;family=Work+Sans:wght@100..900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="../../assets/style.css"
-      type="text/css"
-      media="all"
-    />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;family=Work+Sans:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/style.css" type="text/css" media="all" />
+    <!-- <script type="module" src="script.js"></script> -->
+</head>
+
+<body>
     <header class="siteheader">
-      <div class="site-title">BackpackPacker</div>
-      <div class="site-description">All backpack packing, all the time.</div>
+        <div class="site-title">BackpackPacker</div>
+        <div class="site-description">All backpack packing, all the time.</div>
     </header>
     <main class="maincontent">
-      <div class="page-header">
-        <h2 class="page-header__heading">A pack for every purpose</h2>
-        <p>
-          If you're carrying a heavy load, you can't find a better tool than a
-          backpack. Distributing the weight evenly across your shoulders, back,
-          and hips, the backpack lets you use the natural frame of your body to
-          literally <em>shoulder</em> the weight while your legs do the
-          carrying.
-        </p>
-      </div>
-      <article class="backpack" id="pack01">
-        <figure class="backpack__image">
-          <img src="../../assets/images/everyday.svg" alt="" loading="lazy" />
-        </figure>
-        <h1 class="backpack__name">Everyday Backpack</h1>
-        <ul class="backpack__features">
-          <li class="feature backpack__volume">Volume:<span> 30l</span></li>
-          <li class="feature backpack__color">Color:<span> grey</span></li>
-          <li class="feature backpack__age">Age:<span> 684 days old</span></li>
-          <li class="feature backpack__pockets">
-            Number of pockets:<span> 15</span>
-          </li>
-          <li class="feature backpack__strap" data-side="left">
-            Left strap length: <span>26 inches</span>
-            <form class="leftlength" data-children-count="1">
-              <input
-                type="number"
-                name="leftLength"
-                placeholder="New left length"
-              />
-              <button>Update</button>
-            </form>
-          </li>
-          <li class="feature backpack__strap" data-side="right">
-            Right strap length: <span>26 inches</span>
-            <form class="rightlength" data-children-count="1">
-              <input
-                type="number"
-                name="rightLength"
-                placeholder="New right length"
-              />
-              <button>Update</button>
-            </form>
-          </li>
-          <li class="feature backpack__lid">Lid status: <span>closed</span></li>
-        </ul>
-        <button class="lid-toggle">Open lid</button>
-      </article>
-      <article class="backpack" id="pack02">
-        <figure class="backpack__image">
-          <img src="../../assets/images/frog.svg" alt="" loading="lazy" />
-        </figure>
-        <h1 class="backpack__name">Frog Backpack</h1>
-        <ul class="backpack__features">
-          <li class="feature backpack__volume">Volume:<span> 8l</span></li>
-          <li class="feature backpack__color">Color:<span> green</span></li>
-          <li class="feature backpack__age">Age:<span> 369 days old</span></li>
-          <li class="feature backpack__pockets">
-            Number of pockets:<span> 3</span>
-          </li>
-          <li class="feature backpack__strap" data-side="left">
-            Left strap length: <span>10 inches</span>
-            <form class="leftlength" data-children-count="1">
-              <input
-                type="number"
-                name="leftLength"
-                placeholder="New left length"
-              />
-              <button>Update</button>
-            </form>
-          </li>
-          <li class="feature backpack__strap" data-side="right">
-            Right strap length: <span>10 inches</span>
-            <form class="rightlength" data-children-count="1">
-              <input
-                type="number"
-                name="rightLength"
-                placeholder="New right length"
-              />
-              <button>Update</button>
-            </form>
-          </li>
-          <li class="feature backpack__lid">Lid status: <span>closed</span></li>
-        </ul>
-        <button class="lid-toggle">Open lid</button>
-      </article>
+        <div class="page-header">
+            <h2 class="page-header__heading">A pack for every purpose</h2>
+            <p>
+                If you're carrying a heavy load, you can't find a better tool than a backpack. Distributing the weight evenly across your shoulders, back, and hips, the backpack lets you use the natural frame of your body to literally <em>shoulder</em>                the weight while your legs do the carrying.
+            </p>
+        </div>
+        <article class="backpack" id="pack01">
+            <figure class="backpack__image">
+                <img src="../../assets/images/everyday.svg" alt="" loading="lazy" />
+            </figure>
+            <h1 class="backpack__name">Everyday Backpack</h1>
+            <ul class="backpack__features">
+                <li class="feature backpack__volume">Volume:<span> 30l</span></li>
+                <li class="feature backpack__color">Color:<span> grey</span></li>
+                <li class="feature backpack__age">Age:<span> 684 days old</span></li>
+                <li class="feature backpack__pockets">
+                    Number of pockets:<span> 15</span>
+                </li>
+                <li class="feature backpack__strap" data-side="left">
+                    Left strap length: <span>26 inches</span>
+                    <form class="leftlength" data-children-count="1">
+                        <input type="number" min="5" max="50" name="leftLength" placeholder="New left length" />
+                        <button onclick="return updateLeft();">Update</button>
+                    </form>
+                </li>
+                <li class="feature backpack__strap" data-side="right">
+                    Right strap length: <span>26 inches</span>
+                    <form class="rightlength" data-children-count="1">
+                        <input type="number" min="5" max="50" name="rightLength" placeholder="New right length" />
+                        <button onclick="return updateRight();">Update</button>
+                    </form>
+                </li>
+                <li class="feature backpack__lid">Lid status: <span>closed</span></li>
+            </ul>
+            <button onclick="updateStatusEveryday();" class="lid-toggle">
+          Open lid
+        </button>
+        </article>
+        <article class="backpack" id="pack02">
+            <figure class="backpack__image">
+                <img src="../../assets/images/frog.svg" alt="" loading="lazy" />
+            </figure>
+            <h1 class="backpack__name">Frog Backpack</h1>
+            <ul class="backpack__features">
+                <li class="feature backpack__volume">Volume:<span> 8l</span></li>
+                <li class="feature backpack__color">Color:<span> green</span></li>
+                <li class="feature backpack__age">Age:<span> 369 days old</span></li>
+                <li class="feature backpack__pockets">
+                    Number of pockets:<span> 3</span>
+                </li>
+                <li class="feature backpack__strap" data-side="left">
+                    Left strap length: <span>10 inches</span>
+                    <form class="leftlength" data-children-count="1">
+                        <input type="number" min="5" max="50" name="leftLength" placeholder="New left length" />
+                        <button onclick="return updateLeftFroggy();">Update</button>
+                    </form>
+                </li>
+                <li class="feature backpack__strap" data-side="right">
+                    Right strap length: <span>10 inches</span>
+                    <form class="rightlength" data-children-count="1">
+                        <input type="number" min="5" max="50" name="rightLength" placeholder="New right length" />
+                        <button onclick="return updateRightFroggy();">Update</button>
+                    </form>
+                </li>
+                <li class="feature backpack__lid">Lid status: <span>closed</span></li>
+            </ul>
+            <button onclick="updateStatusFroggy();" class="lid-toggle">
+          Open lid
+        </button>
+        </article>
     </main>
     <footer class="sitefooter">
-      <p>
-        Demo project for JavaScript Essential Training, a LinkedIn Learning
-        course.
-      </p>
+        <p>
+            Demo project for JavaScript Essential Training, a LinkedIn Learning course.
+        </p>
     </footer>
     <!-- Code injected by live-server -->
-  </body>
+    <script>
+        //targeting the main header
+        const header = document.querySelector(".site-title");
+        //main header styles
+        const style_1 = {
+            color: "blue",
+            weight: "bold",
+        };
+        Object.assign(header.style, style_1);
+
+        //targeting the secondary header
+        const subHeader = document.querySelector(".site-description");
+        //subheader styles
+        const style_2 = {
+            color: "brown",
+            fontStyle: "italic",
+            textDecoration: "underline",
+        };
+        Object.assign(subHeader.style, style_2);
+
+        //targeting elements of the first unordered list
+        const linkAge = document.querySelector(
+            "article#pack01.backpack ul.backpack__features li.feature.backpack__age"
+        );
+        linkAge.style.color = "green";
+
+        const linkVolume = document.querySelector(
+            "article#pack01.backpack ul.backpack__features li.feature.backpack__volume"
+        );
+        linkVolume.style.color = "green";
+
+        function updateLeft() {
+            //input for left strap
+            let inputValueL = document.querySelector(
+                "#pack01 > ul:nth-child(3) > li:nth-child(5) > form:nth-child(2) > input:nth-child(1)"
+            ).value;
+
+            //left strap length
+            let targetNumL = document.querySelector(
+                "#pack01 > ul:nth-child(3) > li:nth-child(5) > span:nth-child(1)"
+            );
+            targetNumL.innerHTML = inputValueL + " inches";
+            return false;
+        }
+
+        function updateRight() {
+            //input for right strap
+            let inputValueR = document.querySelector(
+                "#pack01 > ul:nth-child(3) > li:nth-child(6) > form:nth-child(2) > input:nth-child(1)"
+            ).value;
+
+            //right strap length
+            let targetNumR = document.querySelector(
+                "#pack01 > ul:nth-child(3) > li:nth-child(6) > span:nth-child(1)"
+            );
+            targetNumR.innerHTML = inputValueR + " inches";
+            return false;
+        }
+
+        function updateStatusEveryday() {
+            let statsL = document.querySelector(
+                "#pack01 > ul:nth-child(3) > li:nth-child(7) > span:nth-child(1)"
+            );
+            let btnText = document.querySelector("#pack01 > button:nth-child(4)");
+            if (statsL.innerHTML == "closed") {
+                statsL.innerHTML = "open";
+                btnText.innerHTML = "Close lid";
+            } else if (statsL.innerHTML == "open") {
+                statsL.innerHTML = "closed";
+                btnText.innerHTML = "Open lid";
+            }
+        }
+
+        //*************************************************************************** */
+
+        //targeting elements of the second unordered list
+        const linkAge2 = document.querySelector(
+            "article#pack02.backpack ul.backpack__features li.feature.backpack__age"
+        );
+        linkAge2.style.color = "blue";
+
+        const linkVolume2 = document.querySelector(
+            "article#pack02.backpack ul.backpack__features li.feature.backpack__volume"
+        );
+        linkVolume2.style.color = "blue";
+
+        function updateLeftFroggy() {
+            //input for left strap
+            let inputValueL = document.querySelector(
+                "#pack02 > ul:nth-child(3) > li:nth-child(5) > form:nth-child(2) > input:nth-child(1)"
+            ).value;
+
+            //left strap length
+            let targetNumL = document.querySelector(
+                "#pack02 > ul:nth-child(3) > li:nth-child(5) > span:nth-child(1)"
+            );
+            targetNumL.innerHTML = inputValueL + " inches";
+            return false;
+        }
+
+        function updateRightFroggy() {
+            //input for right strap
+            let inputValueL = document.querySelector(
+                "#pack02 > ul:nth-child(3) > li:nth-child(6) > form:nth-child(2) > input:nth-child(1)"
+            ).value;
+
+            //right strap length
+            let targetNumL = document.querySelector(
+                "#pack02 > ul:nth-child(3) > li:nth-child(6) > span:nth-child(1)"
+            );
+            targetNumL.innerHTML = inputValueL + " inches";
+            return false;
+        }
+
+        function updateStatusFroggy() {
+            let statsR = document.querySelector(
+                "#pack02 > ul:nth-child(3) > li:nth-child(7) > span:nth-child(1)"
+            );
+            let btnTextR = document.querySelector("#pack02 > button:nth-child(4)");
+            if (statsR.innerHTML == "closed") {
+                statsR.innerHTML = "open";
+                btnTextR.innerHTML = "Close lid";
+            } else if (statsR.innerHTML == "open") {
+                statsR.innerHTML = "closed";
+                btnTextR.innerHTML = "Open lid";
+            }
+        }
+    </script>
+</body>
+
 </html>
